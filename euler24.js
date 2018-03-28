@@ -1,17 +1,15 @@
 
-let array = [0,1,2,3,4,5,6,7,8,9]
-
-console.log(permsToOrderedString(allPerms(array))[999999])
+let array = [0,1,2,3,4,5,6,7,8,9];
+console.log(permsToOrderedString(allPerms(array))[999999]);
 
 //returns all the permutations from elements in an array
 function allPerms(array){
-  let initial = [[array[0]]]
-
+  let initial = [[array[0]]];
   for (let index = 1; index< array.length; index++){
     let newArray = permutation(initial, array[index]);
     initial = newArray;
   }
-  return initial
+  return initial;
 }
 
 //returns an array of arrays with 'element' inserted in all indexes
@@ -38,6 +36,5 @@ function permsToOrderedString(arrayOfArrays){
       res.push(s);
     }
     res.sort();
-
-  return res
+  return res;
 }
